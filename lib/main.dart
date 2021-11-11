@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onetime/screens/otpVerificationScreen/otp_verification_screen.dart';
 import './screens/screens.dart';
 
 void main() {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       home: const Introscreen(),
       routes: {
         RegisterScreen.routeName: (context) => const RegisterScreen(),
-        LoginScreen.routeName: (context) => const LoginScreen()
+        LoginScreen.routeName: (context) => const LoginScreen(),
+        OtpVerificationScreen.routeName: (context) => const OtpVerificationScreen()
       },
     );
   }

@@ -29,6 +29,7 @@ class RegisterScreen extends StatelessWidget {
                 style: GoogleFonts.poppins(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
+                  color: HexColor('373B55')
                 ),
               ),
             ),
@@ -186,7 +187,9 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(OtpVerificationScreen.routeName);
+                      },
                       child: Text(
                         'Signup',
                         style: GoogleFonts.poppins(
