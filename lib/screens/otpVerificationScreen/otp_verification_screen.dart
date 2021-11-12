@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import '../screens.dart';
 
 class OtpVerificationScreen extends StatelessWidget {
   const OtpVerificationScreen({Key? key}) : super(key: key);
@@ -113,7 +114,7 @@ class OtpVerificationScreen extends StatelessWidget {
                     child: TextButton(
                       onPressed: () {
                         Navigator.of(context)
-                            .pushNamed(OtpVerificationScreen.routeName);
+                            .pushNamed(DetailsFormScreen.routeName);
                       },
                       child: Text(
                         'Verify',

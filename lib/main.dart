@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
       routes: {
         RegisterScreen.routeName: (context) => const RegisterScreen(),
         LoginScreen.routeName: (context) => const LoginScreen(),
-        OtpVerificationScreen.routeName: (context) => const OtpVerificationScreen()
+        OtpVerificationScreen.routeName: (context) => const OtpVerificationScreen(),
+        DetailsFormScreen.routeName: (context) => const DetailsFormScreen(),
       },
     );
   }
