@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:page_transition/page_transition.dart';
 import '../screens.dart';
 
 class Introscreen extends StatelessWidget {
@@ -85,8 +86,11 @@ class Introscreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed(
-                    RegisterScreen.routeName,
+                  Navigator.of(context).pushReplacement(
+                    PageTransition(
+                      child: const RegisterScreen(),
+                      type: PageTransitionType.fade,
+                    ),
                   );
                 },
               ),

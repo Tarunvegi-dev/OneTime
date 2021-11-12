@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.routeName: (context) => const LoginScreen(),
         OtpVerificationScreen.routeName: (context) => const OtpVerificationScreen(),
         DetailsFormScreen.routeName: (context) => const DetailsFormScreen(),
+        SelectApartmentScreen.routeName: (context) => const SelectApartmentScreen()
       },
     );
   }
