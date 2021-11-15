@@ -30,6 +30,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  flutter_svg: ^0.23.0+1
+  intl: ^0.17.0
   google_fonts: ^2.1.0
   hexcolor: ^2.0.5
   page_transition: ^2.0.4
@@ -46,6 +48,24 @@ flutter:
     - assets/background.jpg
     - assets/user.jpg
     - assets/user_profile.jpeg
+    - assets/cart.svg
+    - assets/cart2.svg
+    - assets/bag.svg
+    - assets/search.svg
+    - assets/profile.svg
+    - assets/home.svg
+    - assets/bills.svg
+    - assets/schedule.svg
+    - assets/back_arrow.svg
+    - assets/schedule_blue.svg
+    - assets/minus.svg
+    - assets/add.svg
+    - assets/items/orange.png
+    - assets/items/cabage.png
+    - assets/items/onion.png
+    - assets/items/tomato.png
+    - assets/items/pineapple.png
+    - assets/items/milk.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

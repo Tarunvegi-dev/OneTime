@@ -42,6 +42,10 @@ class LoginScreen extends StatelessWidget {
                 height: 50,
                 margin: const EdgeInsets.only(left: 20, right: 20),
                 child: TextFormField(
+                  style: GoogleFonts.poppins(
+                    color: HexColor('373B55'),
+                    fontSize: 14,
+                  ),
                   decoration: InputDecoration(
                     hintText: "your registered email",
                     hintStyle: GoogleFonts.poppins(
@@ -79,6 +83,10 @@ class LoginScreen extends StatelessWidget {
                 height: 50,
                 margin: const EdgeInsets.only(left: 20, right: 20),
                 child: TextFormField(
+                  style: GoogleFonts.poppins(
+                    color: HexColor('373B55'),
+                    fontSize: 14,
+                  ),
                   decoration: InputDecoration(
                     hintText: "your password",
                     hintStyle: GoogleFonts.poppins(

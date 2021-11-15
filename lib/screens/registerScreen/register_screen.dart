@@ -44,6 +44,8 @@ class RegisterScreen extends StatelessWidget {
                   height: 50,
                   margin: const EdgeInsets.only(left: 20, right: 20),
                   child: TextFormField(
+                    style: GoogleFonts.poppins(
+                        color: HexColor('373B55'), fontSize: 14),
                     decoration: InputDecoration(
                       hintText: "your email address",
                       hintStyle: GoogleFonts.poppins(
@@ -81,6 +83,10 @@ class RegisterScreen extends StatelessWidget {
                   height: 50,
                   margin: const EdgeInsets.only(left: 20, right: 20),
                   child: TextFormField(
+                    style: GoogleFonts.poppins(
+                      color: HexColor('373B55'),
+                      fontSize: 14,
+                    ),
                     decoration: InputDecoration(
                       hintText: "create password",
                       hintStyle: GoogleFonts.poppins(
@@ -118,6 +124,10 @@ class RegisterScreen extends StatelessWidget {
                   height: 50,
                   margin: const EdgeInsets.only(left: 20, right: 20),
                   child: TextFormField(
+                    style: GoogleFonts.poppins(
+                      color: HexColor('373B55'),
+                      fontSize: 14,
+                    ),
                     decoration: InputDecoration(
                       hintText: "confirm password",
                       hintStyle: GoogleFonts.poppins(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:onetime/screens/screens.dart';
+import 'package:intl/intl.dart';
 
 class DetailsFormScreen extends StatefulWidget {
   const DetailsFormScreen({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class DetailsFormScreen extends StatefulWidget {
 
 class _DetailsFormScreenState extends State<DetailsFormScreen> {
   String gender = 'Male';
+  DateTime _currentDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +87,12 @@ class _DetailsFormScreenState extends State<DetailsFormScreen> {
                 height: 50,
                 margin: const EdgeInsets.only(left: 20, right: 20),
                 child: TextFormField(
+                  textAlignVertical: TextAlignVertical.center,
+                  style: GoogleFonts.poppins(
+                    color: HexColor('373B55'),
+                    fontSize: 14,
+                    height: 1.5,
+                  ),
                   decoration: InputDecoration(
                     hintText: "Your Name",
                     hintStyle: GoogleFonts.poppins(
@@ -110,7 +118,7 @@ class _DetailsFormScreenState extends State<DetailsFormScreen> {
                     fillColor: const Color.fromARGB(63, 217, 220, 223),
                     contentPadding: const EdgeInsets.only(
                       left: 27,
-                      top: 13,
+                      top: 12,
                     ),
                   ),
                 ),
@@ -122,11 +130,44 @@ class _DetailsFormScreenState extends State<DetailsFormScreen> {
                 height: 50,
                 margin: const EdgeInsets.only(left: 20, right: 20),
                 child: TextFormField(
+                  controller: TextEditingController(
+                    text: DateFormat.yMMMMd().format(
+                      _currentDate,
+                    ),
+                  ),
+                  style: GoogleFonts.poppins(
+                    color: HexColor('373B55'),
+                    fontSize: 14,
+                    height: 1.5,
+                  ),
                   readOnly: true,
+                  textAlignVertical: TextAlignVertical.center,
                   decoration: InputDecoration(
-                    suffixIcon: Icon(
-                      Icons.date_range,
-                      color: HexColor('ABABAD'),
+                    suffixIcon: InkWell(
+                      onTap: () async {
+                        FocusScope.of(context).requestFocus(FocusNode());
+                        final _pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(1970),
+                          lastDate: DateTime(2050),
+                        );
+                        if (_pickedDate != null &&
+                            _pickedDate != _currentDate) {
+                          setState(
+                            () {
+                              _currentDate = _pickedDate;
+                            },
+                          );
+                        }
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 25),
+                        child: Icon(
+                          Icons.date_range,
+                          color: HexColor('ABABAD'),
+                        ),
+                      ),
                     ),
                     hintText: "Date of Birth",
                     hintStyle: GoogleFonts.poppins(
@@ -152,7 +193,7 @@ class _DetailsFormScreenState extends State<DetailsFormScreen> {
                     fillColor: const Color.fromARGB(63, 217, 220, 223),
                     contentPadding: const EdgeInsets.only(
                       left: 27,
-                      top: 13,
+                      top: 12,
                     ),
                   ),
                 ),
@@ -164,9 +205,15 @@ class _DetailsFormScreenState extends State<DetailsFormScreen> {
                 height: 50,
                 margin: const EdgeInsets.only(left: 20, right: 20),
                 child: TextFormField(
+                  textAlignVertical: TextAlignVertical.center,
+                  style: GoogleFonts.poppins(
+                      color: HexColor('373B55'), fontSize: 14, height: 1.5),
                   decoration: InputDecoration(
                     prefixIcon: Container(
-                      margin: const EdgeInsets.only(left: 25, right: 10),
+                      margin: const EdgeInsets.only(
+                        left: 25,
+                        right: 10,
+                      ),
                       child: Text(
                         '+91',
                         style: GoogleFonts.poppins(
@@ -201,7 +248,7 @@ class _DetailsFormScreenState extends State<DetailsFormScreen> {
                     fillColor: const Color.fromARGB(63, 217, 220, 223),
                     contentPadding: const EdgeInsets.only(
                       left: 27,
-                      top: 13,
+                      top: 12,
                     ),
                   ),
                 ),
@@ -217,7 +264,7 @@ class _DetailsFormScreenState extends State<DetailsFormScreen> {
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 27),
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: DropdownButton(
                     isExpanded: true,
                     underline: const SizedBox(),
