@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:onetime/screens/screens.dart';
+import 'package:onetime/screens/mainScreen/main_screen.dart';
 import 'package:onetime/widgets/apartment_widget.dart';
 
 class SelectApartmentScreen extends StatelessWidget {
@@ -115,7 +115,7 @@ class SelectApartmentScreen extends StatelessWidget {
         ),
         child: TextButton(
           onPressed: () {
-            Navigator.of(context).pushNamed(HomeScreen.routeName);
+            Navigator.of(context).pushNamed(MainScreen.routeName);
           },
           child: Text(
             'skip for now',

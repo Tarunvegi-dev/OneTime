@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onetime/screens/mainScreen/main_screen.dart';
 import 'package:onetime/screens/otpVerificationScreen/otp_verification_screen.dart';
 import './screens/screens.dart';
 
@@ -20,8 +21,7 @@ class MyApp extends StatelessWidget {
         OtpVerificationScreen.routeName: (context) => const OtpVerificationScreen(),
         DetailsFormScreen.routeName: (context) => const DetailsFormScreen(),
         SelectApartmentScreen.routeName: (context) => const SelectApartmentScreen(),
-        HomeScreen.routeName: (context) => const HomeScreen(),
-        ItemScreen.routeName: (context) => const ItemScreen(),
+        MainScreen.routeName: (context) => const MainScreen(),
       },
     );
   }

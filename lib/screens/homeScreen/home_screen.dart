@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SvgPicture.asset(
-                    'assets/cart.svg',
+                    'assets/icons/notifications.svg',
                     width: 24,
                     height: 24,
                   ),
@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                     vertical: 14,
                   ),
                   child: SvgPicture.asset(
-                    'assets/search.svg',
+                    'assets/icons/search.svg',
                     height: 24,
                     width: 24,
                   ),
@@ -205,67 +205,13 @@ class HomeScreen extends StatelessWidget {
                   items[index]['image'],
                   items[index]['category'],
                   items[index]['price'],
-                  key: ValueKey(index),
+                  index,
                 );
               },
               itemCount: items.length,
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: Container(
-        width: double.infinity,
-        height: MediaQuery.of(context).size.height * 6.5 / 100,
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: HexColor('E8EBEF'),
-              offset: const Offset(
-                1.0,
-                1.0,
-              ),
-              blurRadius: 10.0,
-              spreadRadius: 2.0,
-            ), //BoxShadow
-            const BoxShadow(
-              color: Colors.white,
-              offset: Offset(0.0, 0.0),
-              blurRadius: 0.0,
-              spreadRadius: 0.0,
-            ), //BoxShadow
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            SizedBox(
-              height: 24,
-              width: 24,
-              child: SvgPicture.asset('assets/home.svg'),
-            ),
-            SizedBox(
-              height: 24,
-              width: 24,
-              child: SvgPicture.asset('assets/schedule.svg'),
-            ),
-            SizedBox(
-              height: 24,
-              width: 24,
-              child: SvgPicture.asset('assets/cart2.svg'),
-            ),
-            SizedBox(
-              height: 24,
-              width: 24,
-              child: SvgPicture.asset('assets/bills.svg'),
-            ),
-            SizedBox(
-              height: 24,
-              width: 24,
-              child: SvgPicture.asset('assets/profile.svg'),
-            )
-          ],
-        ),
       ),
     );
   }

@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import '../homeScreen/items_data.dart';
 
 class ItemScreen extends StatelessWidget {
-  const ItemScreen({Key? key}) : super(key: key);
+  const ItemScreen(this.itemId, {Key? key}) : super(key: key);
+
+  final int itemId;
 
   static const routeName = './itemScreen';
 
@@ -68,7 +71,7 @@ class ItemScreen extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: SvgPicture.asset(
-                          'assets/back_arrow.svg',
+                          'assets/icons/back_arrow.svg',
                           height: 24,
                           width: 24,
                         ),
@@ -100,7 +103,7 @@ class ItemScreen extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(10),
                         child: SvgPicture.asset(
-                          'assets/schedule_blue.svg',
+                          'assets/icons/schedule_blue.svg',
                           height: 20,
                           width: 20,
                         ),
@@ -109,11 +112,14 @@ class ItemScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 300,
                 width: 300,
-                child: Image(
-                  image: AssetImage('assets/items/orange.png'),
+                child: Hero(
+                  tag: itemId,
+                  child: Image(
+                    image: AssetImage(items[itemId]['image']),
+                  ),
                 ),
               ),
               Container(
@@ -128,7 +134,7 @@ class ItemScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Orange Fruit',
+                          items[itemId]['name'],
                           style: GoogleFonts.poppins(
                             color: HexColor('373B55'),
                             fontSize: 24,
@@ -136,7 +142,7 @@ class ItemScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Fruit',
+                          items[itemId]['category'],
                           style: GoogleFonts.poppins(
                             color: HexColor('ABABAD'),
                             fontWeight: FontWeight.w500,
@@ -155,7 +161,7 @@ class ItemScreen extends StatelessWidget {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 3),
-                            child: SvgPicture.asset('assets/minus.svg'),
+                            child: SvgPicture.asset('assets/icons/minus.svg'),
                           ),
                         ),
                         Container(
@@ -184,7 +190,7 @@ class ItemScreen extends StatelessWidget {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 3),
-                            child: SvgPicture.asset('assets/add.svg'),
+                            child: SvgPicture.asset('assets/icons/add.svg'),
                           ),
                         ),
                       ],
@@ -390,7 +396,7 @@ class ItemScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      '₹ 12 ',
+                      '₹${items[itemId]['price']}',
                       style: GoogleFonts.poppins(
                         color: HexColor('373B55'),
                         fontSize: 25,
@@ -402,7 +408,7 @@ class ItemScreen extends StatelessWidget {
                         top: 4,
                       ),
                       child: Text(
-                        '/piece',
+                        items[itemId]['category'] == 'Fruit' ?  '/piece' : items[itemId]['category'] == 'Diary' ? '/packet' : '/kg',
                         style: GoogleFonts.poppins(
                           color: HexColor('373B55'),
                           fontSize: 11,

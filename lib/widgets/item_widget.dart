@@ -5,19 +5,31 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:onetime/screens/screens.dart';
 
 class ItemWidget extends StatelessWidget {
-  const ItemWidget(this.name, this.image, this.category, this.price, {Key? key})
+  const ItemWidget(this.name, this.image, this.category, this.price, this.id, {Key? key})
       : super(key: key);
 
   final dynamic name;
   final dynamic image;
   final dynamic category;
   final dynamic price;
+  final int id;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed(ItemScreen.routeName);
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (
+              _,
+              __,
+              ___,
+            ) =>
+                ItemScreen(id),
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        );
       },
       child: Container(
         decoration: BoxDecoration(
@@ -69,9 +81,12 @@ class ItemWidget extends StatelessWidget {
             SizedBox(
               height: 103,
               width: 134,
-              child: Image(
-                image: AssetImage(
-                  image,
+              child: Hero(
+                tag: id,
+                child: Image(
+                  image: AssetImage(
+                    image,
+                  ),
                 ),
               ),
             ),
@@ -120,7 +135,11 @@ class ItemWidget extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        category == 'Fruit' ? ' /piece' : category == 'Diary' ? ' /packet' : ' /kg',
+                        category == 'Fruit'
+                            ? ' /piece'
+                            : category == 'Diary'
+                                ? ' /packet'
+                                : ' /kg',
                         style: GoogleFonts.poppins(
                             color: HexColor('ABABAD'),
                             fontSize: 10,
@@ -141,7 +160,7 @@ class ItemWidget extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(6.0),
                       margin: const EdgeInsets.only(left: 4),
-                      child: SvgPicture.asset('assets/bag.svg'),
+                      child: SvgPicture.asset('assets/icons/bag.svg'),
                     ),
                   ),
                 ],

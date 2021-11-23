@@ -6,3 +6,5 @@ export './detailsFormScreen/details_form_screen.dart';
 export './selectApartmentScreen/select_apartment_screen.dart';
 export './homeScreen/home_screen.dart';
 export './itemScreen/item_screen.dart';
+export './profileScreen/profile_screen.dart';
+export './billsScreen/bills_screen.dart';

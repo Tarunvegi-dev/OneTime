@@ -45,21 +45,27 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/icons/home.svg
+    - assets/icons/home_active.svg
+    - assets/icons/cart.svg
+    - assets/icons/bills.svg
+    - assets/icons/bills_active.svg
+    - assets/icons/schedule.svg
+    - assets/icons/profile.svg
+    - assets/icons/profile_active.svg
+    - assets/icons/arrow_down.svg
+    - assets/icons/arrow_up.svg
     - assets/background.jpg
     - assets/user.jpg
     - assets/user_profile.jpeg
-    - assets/cart.svg
-    - assets/cart2.svg
-    - assets/bag.svg
-    - assets/search.svg
-    - assets/profile.svg
-    - assets/home.svg
-    - assets/bills.svg
-    - assets/schedule.svg
-    - assets/back_arrow.svg
-    - assets/schedule_blue.svg
-    - assets/minus.svg
-    - assets/add.svg
+    - assets/icons/menu.svg
+    - assets/icons/notifications.svg
+    - assets/icons/bag.svg
+    - assets/icons/search.svg
+    - assets/icons/back_arrow.svg
+    - assets/icons/schedule_blue.svg
+    - assets/icons/minus.svg
+    - assets/icons/add.svg
     - assets/items/orange.png
     - assets/items/cabage.png
     - assets/items/onion.png
