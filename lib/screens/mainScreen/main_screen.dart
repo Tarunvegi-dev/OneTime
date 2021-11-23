@@ -15,7 +15,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   List<Widget> widgets = const [
     HomeScreen(),
-    Scaffold(),
+    ScheduleScreen(),
     Scaffold(),
     BillsScreen(),
     ProfileScreen(),
@@ -80,7 +80,11 @@ class _MainScreenState extends State<MainScreen> {
               child: SizedBox(
                 height: 24,
                 width: 24,
-                child: SvgPicture.asset('assets/icons/schedule.svg'),
+                child: SvgPicture.asset(
+                  currentIndex == 1
+                      ? 'assets/icons/schedule_active.svg'
+                      : 'assets/icons/schedule.svg',
+                ),
               ),
             ),
             GestureDetector(

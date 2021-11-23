@@ -51,6 +51,7 @@ flutter:
     - assets/icons/bills.svg
     - assets/icons/bills_active.svg
     - assets/icons/schedule.svg
+    - assets/icons/schedule_active.svg
     - assets/icons/profile.svg
     - assets/icons/profile_active.svg
     - assets/icons/arrow_down.svg
