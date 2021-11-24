@@ -61,70 +61,73 @@ class BillsScreen extends StatelessWidget {
                 ],
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: 8,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(
+                        top: 8,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Due',
+                            style: GoogleFonts.poppins(
+                              color: HexColor('ABABAD'),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                '₹ 500',
+                                style: GoogleFonts.poppins(
+                                  color: HexColor('373B55'),
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'only',
+                                style: GoogleFonts.poppins(
+                                  color: HexColor('ABABAD'),
+                                  fontSize: 12,
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Due',
+                    Container(
+                      height: 40,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                          25,
+                        ),
+                        color: HexColor('E8F6DF'),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Pay',
                           style: GoogleFonts.poppins(
-                            color: HexColor('ABABAD'),
-                            fontSize: 16,
+                            color: HexColor('53B176'),
                             fontWeight: FontWeight.w600,
+                            fontSize: 20,
                           ),
                         ),
-                        Row(
-                          children: [
-                            Text(
-                              '₹ 500',
-                              style: GoogleFonts.poppins(
-                                color: HexColor('373B55'),
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              'only',
-                              style: GoogleFonts.poppins(
-                                color: HexColor('ABABAD'),
-                                fontSize: 12,
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 40,
-                    width: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        25,
                       ),
-                      color: HexColor('E8F6DF'),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Pay',
-                        style: GoogleFonts.poppins(
-                          color: HexColor('53B176'),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
             ),
             const SizedBox(

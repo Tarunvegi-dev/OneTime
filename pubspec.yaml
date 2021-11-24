@@ -48,6 +48,7 @@ flutter:
     - assets/icons/home.svg
     - assets/icons/home_active.svg
     - assets/icons/cart.svg
+    - assets/icons/cart_active.svg
     - assets/icons/bills.svg
     - assets/icons/bills_active.svg
     - assets/icons/schedule.svg
