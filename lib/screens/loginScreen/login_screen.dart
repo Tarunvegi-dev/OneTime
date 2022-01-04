@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:onetime/screens/homeScreen/home_screen.dart';
 import 'package:onetime/screens/registerScreen/register_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -151,7 +152,7 @@ class LoginScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).pushReplacement(
                             PageTransition(
-                              child: const RegisterScreen(),
+                              child: RegisterScreen(),
                               type: PageTransitionType.rightToLeft,
                             ),
                           );
@@ -182,7 +183,9 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(HomeScreen.routeName);
+                        },
                         child: Text(
                           'Login',
                           style: GoogleFonts.poppins(

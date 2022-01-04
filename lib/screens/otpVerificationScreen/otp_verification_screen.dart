@@ -1,14 +1,27 @@
+import 'package:email_auth/email_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:onetime/widgets/text_button.dart';
-import '../screens.dart';
+import 'package:onetime/screens/screens.dart';
 
 class OtpVerificationScreen extends StatelessWidget {
-  const OtpVerificationScreen({Key? key}) : super(key: key);
+  OtpVerificationScreen(this.email, this.password, {Key? key})
+      : super(key: key);
 
+  final String email;
+  final String password;
   static const routeName = '/otpVerification';
+  final TextEditingController _otpController = TextEditingController();
+
+  verify(BuildContext context) async {
+    EmailAuth emailAuth = EmailAuth(sessionName: email);
+    bool validate = emailAuth.validateOtp(recipientMail: email, userOtp: _otpController.text);
+    if(validate) {
+      Navigator.of(context).pushNamed(DetailsFormScreen.routeName);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +57,7 @@ class OtpVerificationScreen extends StatelessWidget {
                   ),
                   height: 65,
                   child: TextField(
+                    controller: _otpController,
                     cursorColor: HexColor('373B55'),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
@@ -109,10 +123,7 @@ class OtpVerificationScreen extends StatelessWidget {
                           ),
                         ),
                         child: TextButton(
-                          onPressed: () {
-                            Navigator.of(context)
-                                .pushNamed(DetailsFormScreen.routeName);
-                          },
+                          onPressed: () {verify(context);},
                           child: Text(
                             'Verify',
                             style: GoogleFonts.poppins(
@@ -135,7 +146,9 @@ class OtpVerificationScreen extends StatelessWidget {
                   style: GoogleFonts.poppins(
                       color: HexColor('ABABAD'), fontWeight: FontWeight.w500),
                 ),
-                const SizedBox(height: 50,)
+                const SizedBox(
+                  height: 50,
+                )
               ],
             ),
           ),

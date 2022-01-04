@@ -88,7 +88,7 @@ class Introscreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
                     PageTransition(
-                      child: const RegisterScreen(),
+                      child: RegisterScreen(),
                       type: PageTransitionType.fade,
                     ),
                   );
