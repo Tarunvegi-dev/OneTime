@@ -24,20 +24,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final formKey = GlobalKey<FormState>();
 
   signup() {
-    final validate = formKey.currentState!.validate();
-    if (validate) {
-      EmailAuth emailAuth = EmailAuth(sessionName: emailController.text);
-      emailAuth.sendOtp(recipientMail: emailController.text);
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => OtpVerificationScreen(
-            emailController.text,
-            passwordController.text,
-          ),
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => OtpVerificationScreen(
+          emailController.text,
+          passwordController.text,
         ),
-      );
-      FocusScope.of(context).unfocus();
-    }
+      ),
+    );
   }
 
   @override

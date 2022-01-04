@@ -16,11 +16,7 @@ class OtpVerificationScreen extends StatelessWidget {
   final TextEditingController _otpController = TextEditingController();
 
   verify(BuildContext context) async {
-    EmailAuth emailAuth = EmailAuth(sessionName: email);
-    bool validate = emailAuth.validateOtp(recipientMail: email, userOtp: _otpController.text);
-    if(validate) {
       Navigator.of(context).pushNamed(DetailsFormScreen.routeName);
-    }
   }
 
   @override
